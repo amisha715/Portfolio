@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amisha Maurya | Graphic Designer & Web Designer Portfolio</title>
+  <meta name="description" content="Amisha Maurya is a Graphic Designer, Web Designer, and WordPress Developer creating impactful digital experiences through creativity, design thinking, and technology." />
+  <meta name="keywords" content="Amisha Maurya, Graphic Designer, Web Designer, WordPress Developer, Portfolio, Branding, UI Design" />
+  <meta property="og:title" content="Amisha Maurya | Designer Portfolio" />
+  <meta property="og:description" content="Premium portfolio of Amisha Maurya - Graphic Designer & Web Designer." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body class="loading">
+
+<!-- ============================================
+     PRELOADER
+     ============================================ -->
+<div id="preloader">
+  <div class="preloader-name">AMISHA <span>MAURYA</span></div>
+  <div class="preloader-bar-wrap">
+    <div class="preloader-bar"></div>
+  </div>
+  <div class="preloader-count">0%</div>
+</div>
+<div class="preloader-wipe"></div>
+
+<!-- ============================================
+     CUSTOM CURSOR
+     ============================================ -->
+<div id="cursor-outer"></div>
+<div id="cursor-inner"></div>
+<div id="mouse-glow"></div>
+
+<!-- ============================================
+     LIGHTBOX
+     ============================================ -->
+<div id="lightbox">
+  <button class="lightbox-close" aria-label="Close lightbox">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </button>
+  <img class="lightbox-img" src="" alt="Portfolio work preview" />
+</div>
+
+<!-- ============================================
+     NAVIGATION
+     ============================================ -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-logo"><a href="#hero">AM<span>.</span></a></div>
+  <ul class="nav-links" role="list">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#graphic-design">Design</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+  <button class="nav-menu-btn" aria-label="Toggle menu" id="nav-menu-btn">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ============================================
+     SECTION 1: HERO
+     ============================================ -->
+<section id="hero" aria-label="Hero Section">
+  <div class="hero-bg">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <canvas id="hero-canvas"></canvas>
+  </div>
+
+  <div class="hero-content">
+    <!-- Left: Text -->
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Available for Freelance Work
+      </div>
+
+      <h1 class="hero-title">
+        Designing Experiences That
+        <span class="highlight">Connect, Inspire</span>
+        &amp; Convert
+      </h1>
+
+      <p class="hero-sub">
+        Graphic Designer, Web Designer &amp; WordPress Developer creating impactful digital experiences through creativity, design thinking and technology.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary" id="hero-view-work">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          View My Work
+        </a>
+        <a href="#contact" class="btn-secondary" id="hero-contact">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          Contact Me
+        </a>
+      </div>
+
+      <div class="hero-identity">
+        <div class="hero-identity-avatar">
+          <img src="assets/amisha_portrait.png" alt="Amisha Maurya Profile" />
+        </div>
+        <div class="hero-identity-text">
+          <strong>Amisha Maurya</strong>
+          <span>Graphic Designer • Web Designer • Creative Thinker</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Portrait + Floating Badges -->
+    <div class="hero-right">
+      <div class="hero-visual">
+        <div class="hero-portrait-frame">
+          <img src="assets/amisha_portrait.png" alt="Amisha Maurya - Creative Designer" />
+          <div class="hero-portrait-overlay"></div>
+        </div>
+
+        <!-- Floating Tool Badges -->
+        <div class="tool-badge tool-badge-ps">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#31A8FF"><rect width="24" height="24" rx="4" fill="#001E36"/><text x="4" y="17" font-size="11" font-weight="bold" fill="#31A8FF" font-family="Arial">Ps</text></svg>
+          Photoshop
+        </div>
+        <div class="tool-badge tool-badge-ai">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#300"/><text x="3" y="17" font-size="10" font-weight="bold" fill="#FF9A00" font-family="Arial">Ai</text></svg>
+          Illustrator
+        </div>
+        <div class="tool-badge tool-badge-canva">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><rect width="24" height="24" rx="12" fill="#7D2AE8"/><text x="5" y="17" font-size="10" font-weight="bold" fill="#fff" font-family="Arial">Ca</text></svg>
+          Canva
+        </div>
+        <div class="tool-badge tool-badge-wp">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#21759B"/><text x="4" y="17" font-size="10" font-weight="bold" fill="#fff" font-family="Arial">WP</text></svg>
+          WordPress
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 2: ABOUT ME
+     ============================================ -->
+<section id="about" aria-label="About Me">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Left: Portrait -->
+      <div class="about-image-side">
+        <div class="about-portrait-glow"></div>
+        <div class="about-portrait-wrap">
+          <img src="assets/amisha_portrait.png" alt="Amisha Maurya - About" />
+          <div class="about-badges">
+            <span class="about-badge">🎨 Creative Thinker</span>
+            <span class="about-badge">💻 Web Developer</span>
+            <span class="about-badge">✨ Brand Builder</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Content -->
+      <div class="about-content">
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About <span>Me</span></h2>
+
+        <p class="about-text">
+          I am a Computer Science Engineering student passionate about graphic design, website development and digital creativity. I specialize in creating engaging visual identities, professional catalogues, marketing creatives and responsive websites that help brands establish a strong online presence.
+        </p>
+        <p class="about-text">
+          My expertise combines creativity with technology, allowing me to design visually appealing experiences while ensuring functionality and user engagement.
+        </p>
+
+        <p class="highlights-title">Experience Highlights</p>
+        <ul class="highlights-list">
+          <li class="highlight-item">Graphic Designer Executive</li>
+          <li class="highlight-item">Web Designer</li>
+          <li class="highlight-item">WordPress Developer</li>
+          <li class="highlight-item">Website Deployment Specialist</li>
+          <li class="highlight-item">Catalogue Designer</li>
+        </ul>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-card reveal">
+            <div class="stat-number" data-target="5" data-suffix="+">0+</div>
+            <div class="stat-label">Website Projects</div>
+          </div>
+          <div class="stat-card reveal">
+            <div class="stat-number" data-target="3" data-suffix="+">0+</div>
+            <div class="stat-label">Catalogue Designs</div>
+          </div>
+          <div class="stat-card reveal">
+            <div class="stat-number" data-target="1" data-suffix="+">0+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-card reveal">
+            <div class="stat-number" data-target="10" data-suffix="+">0+</div>
+            <div class="stat-label">Creative Designs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 3: SKILLS
+     ============================================ -->
+<section id="skills" aria-label="Skills and Tools">
+  <div class="container">
+    <span class="section-tag">What I Do</span>
+    <h2 class="section-title">Creative Skills &amp; <span>Tools</span></h2>
+    <p class="section-desc">A versatile skill set spanning design, development, and analytics — built to bring brands to life end-to-end.</p>
+
+    <div class="skills-grid">
+
+      <!-- Graphic Design -->
+      <div class="skill-category-card">
+        <div class="skill-cat-icon">🎨</div>
+        <h3 class="skill-cat-title">Graphic Design</h3>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-item-name">Adobe Photoshop</span><span class="skill-item-level">Expert</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="92"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-item-name">Adobe Illustrator</span><span class="skill-item-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-item-name">Canva</span><span class="skill-item-level">Expert</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="95"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Web Development -->
+      <div class="skill-category-card">
+        <div class="skill-cat-icon">💻</div>
+        <h3 class="skill-cat-title">Web Development</h3>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-item-name">HTML &amp; CSS</span><span class="skill-item-level">Expert</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="95"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-item-name">JavaScript</span><span class="skill-item-level">Intermediate</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="70"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-item-name">React</span><span class="skill-item-level">Beginner</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="50"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WordPress -->
+      <div class="skill-category-card">
+        <div class="skill-cat-icon">🌐</div>
+        <h3 class="skill-cat-title">WordPress</h3>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-item-name">Theme Customization</span><span class="skill-item-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-item-name">Website Management</span><span class="skill-item-level">Expert</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="92"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-item-name">Hosting Setup</span><span class="skill-item-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="82"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analytics -->
+      <div class="skill-category-card">
+        <div class="skill-cat-icon">📊</div>
+        <h3 class="skill-cat-title">Analytics</h3>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-item-name">Power BI</span><span class="skill-item-level">Intermediate</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="68"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-item-name">Excel</span><span class="skill-item-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-item-name">Data Analytics</span><span class="skill-item-level">Intermediate</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="65"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="skill-category-card">
+        <div class="skill-cat-icon">🛠️</div>
+        <h3 class="skill-cat-title">Tools &amp; Platforms</h3>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-item-name">Git &amp; GitHub</span><span class="skill-item-level">Intermediate</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="72"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-item-name">VS Code</span><span class="skill-item-level">Expert</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="95"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-item-name">Hostinger</span><span class="skill-item-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 4: EXPERIENCE TIMELINE
+     ============================================ -->
+<section id="experience" aria-label="Professional Experience">
+  <div class="container">
+    <span class="section-tag">My Journey</span>
+    <h2 class="section-title">Professional <span>Journey</span></h2>
+    <p class="section-desc">A growing career shaped by real-world design and development challenges across fast-moving companies.</p>
+
+    <div class="timeline">
+      <div class="timeline-line"></div>
+
+      <!-- Role 1 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Dec 2025 – Feb 2026</div>
+        <h3 class="timeline-role">Graphic Designer Executive</h3>
+        <p class="timeline-company">Omniverse Innovations Pvt. Ltd.</p>
+        <div class="timeline-tasks">
+          <span class="timeline-task">Designed marketing creatives</span>
+          <span class="timeline-task">Created social media graphics</span>
+          <span class="timeline-task">Managed WordPress websites</span>
+          <span class="timeline-task">Customized themes</span>
+          <span class="timeline-task">Maintained hosted websites</span>
+          <span class="timeline-task">Website deployment &amp; support</span>
+        </div>
+      </div>
+
+      <!-- Role 2 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">July 2025 – Oct 2025</div>
+        <h3 class="timeline-role">Web Developer &amp; Graphic Designer Intern</h3>
+        <p class="timeline-company">Garvik India Pvt. Ltd.</p>
+        <div class="timeline-tasks">
+          <span class="timeline-task">Designed websites</span>
+          <span class="timeline-task">Developed responsive pages</span>
+          <span class="timeline-task">Created visual branding assets</span>
+          <span class="timeline-task">Designed promotional graphics</span>
+          <span class="timeline-task">Worked with AI video tools</span>
+        </div>
+      </div>
+
+      <!-- Role 3 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Apr 2025 – Jun 2025</div>
+        <h3 class="timeline-role">Data Entry Intern</h3>
+        <p class="timeline-company">Oscorm Digital Pvt Ltd</p>
+        <div class="timeline-tasks">
+          <span class="timeline-task">Data management</span>
+          <span class="timeline-task">Spreadsheet maintenance</span>
+          <span class="timeline-task">Data accuracy optimization</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 5: FEATURED WEBSITE PROJECTS
+     ============================================ -->
+<section id="projects" aria-label="Featured Projects">
+  <div class="container">
+    <span class="section-tag">Portfolio</span>
+    <h2 class="section-title">Featured Website <span>Projects</span></h2>
+    <p class="section-desc">Real-world websites designed and developed from concept to deployment — with a focus on brand identity and user experience.</p>
+
+    <div class="projects-grid">
+
+      <!-- Project 1: Bizzshort -->
+      <div class="project-card">
+        <div class="project-card-img-wrap">
+          <img class="project-card-img" src="assets/project_bizzshort.png" alt="Bizzshort - Business News Platform" />
+          <div class="project-card-overlay">
+            <a href="#" class="btn-sm btn-sm-primary" id="bizzshort-preview">Live Preview ↗</a>
+            <a href="#" class="btn-sm btn-sm-outline" id="bizzshort-case">Case Study</a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <span class="project-category">Business News Platform</span>
+          <h3 class="project-name">Bizzshort</h3>
+          <p class="project-desc">A modern business news platform delivering concise, real-time updates and industry trends through a clean and engaging user experience.</p>
+          <div class="project-features">
+            <span class="project-feature-tag">Responsive Design</span>
+            <span class="project-feature-tag">Modern Layout</span>
+            <span class="project-feature-tag">Fast User Experience</span>
+          </div>
+          <div class="project-card-btns">
+            <a href="#" class="btn-sm btn-sm-primary" id="bizzshort-preview-2">Live Preview</a>
+            <a href="#" class="btn-sm btn-sm-outline" id="bizzshort-case-2">Case Study</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Vedant Ventures -->
+      <div class="project-card">
+        <div class="project-card-img-wrap">
+          <img class="project-card-img" src="assets/project_vedant.png" alt="Vedant Ventures - Corporate Website" />
+          <div class="project-card-overlay">
+            <a href="#" class="btn-sm btn-sm-primary" id="vedant-preview">Live Preview ↗</a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <span class="project-category">Corporate Website</span>
+          <h3 class="project-name">Vedant Ventures</h3>
+          <p class="project-desc">Designed and deployed a professional business website with responsive pages, structured navigation and strong brand consistency.</p>
+          <div class="project-features">
+            <span class="project-feature-tag">WordPress Development</span>
+            <span class="project-feature-tag">Hosting Management</span>
+            <span class="project-feature-tag">Brand-Focused Design</span>
+          </div>
+          <div class="project-card-btns">
+            <a href="#" class="btn-sm btn-sm-primary" id="vedant-preview-2">Live Preview</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Thoroughclean Ultrasonic -->
+      <div class="project-card">
+        <div class="project-card-img-wrap">
+          <img class="project-card-img" src="assets/project_thoroughclean.png" alt="Thoroughclean Ultrasonic - Industrial Website" />
+          <div class="project-card-overlay">
+            <a href="#" class="btn-sm btn-sm-primary" id="thoroughclean-preview">Live Preview ↗</a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <span class="project-category">Industrial Website</span>
+          <h3 class="project-name">Thoroughclean Ultrasonic</h3>
+          <p class="project-desc">Developed a modern industrial website showcasing ultrasonic cleaning solutions with strong visual hierarchy and responsive design.</p>
+          <div class="project-features">
+            <span class="project-feature-tag">Industrial Design</span>
+            <span class="project-feature-tag">Visual Hierarchy</span>
+            <span class="project-feature-tag">Responsive</span>
+          </div>
+          <div class="project-card-btns">
+            <a href="#" class="btn-sm btn-sm-primary" id="thoroughclean-preview-2">Live Preview</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Commwell Solutions -->
+      <div class="project-card">
+        <div class="project-card-img-wrap">
+          <img class="project-card-img" src="assets/project_commwell.png" alt="Commwell Solutions - Business Website" />
+          <div class="project-card-overlay">
+            <a href="#" class="btn-sm btn-sm-primary" id="commwell-preview">Live Preview ↗</a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <span class="project-category">Business Website</span>
+          <h3 class="project-name">Commwell Solutions</h3>
+          <p class="project-desc">Built a responsive corporate website focusing on brand identity, service presentation and customer engagement.</p>
+          <div class="project-features">
+            <span class="project-feature-tag">Brand Identity</span>
+            <span class="project-feature-tag">Service Layout</span>
+            <span class="project-feature-tag">Customer Engagement</span>
+          </div>
+          <div class="project-card-btns">
+            <a href="#" class="btn-sm btn-sm-primary" id="commwell-preview-2">Live Preview</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 6: GRAPHIC DESIGN PORTFOLIO
+     ============================================ -->
+<section id="graphic-design" aria-label="Graphic Design Portfolio">
+  <div class="container">
+    <span class="section-tag">Creative Work</span>
+    <h2 class="section-title">Graphic Design <span>Works</span></h2>
+    <p class="section-desc">A curated collection of branding, social media, and marketing design projects crafted with intention and precision.</p>
+
+    <div class="portfolio-filters">
+      <button class="filter-btn active" data-filter="all" id="filter-all">All Works</button>
+      <button class="filter-btn" data-filter="social" id="filter-social">Social Media</button>
+      <button class="filter-btn" data-filter="marketing" id="filter-marketing">Marketing</button>
+      <button class="filter-btn" data-filter="branding" id="filter-branding">Branding</button>
+      <button class="filter-btn" data-filter="catalogue" id="filter-catalogue">Catalogue</button>
+      <button class="filter-btn" data-filter="corporate" id="filter-corporate">Corporate</button>
+    </div>
+
+    <div class="masonry-grid">
+
+      <div class="masonry-item" data-category="social">
+        <img src="assets/graphic_social.png" alt="Social Media Creatives" />
+        <div class="masonry-overlay">
+          <h4 class="masonry-title">Social Media Campaign</h4>
+          <span class="masonry-tag">Social Media Creatives</span>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-category="branding">
+        <img src="assets/graphic_branding.png" alt="Brand Identity Design" />
+        <div class="masonry-overlay">
+          <h4 class="masonry-title">Brand Identity System</h4>
+          <span class="masonry-tag">Branding Concepts</span>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-category="marketing">
+        <img src="assets/graphic_marketing.png" alt="Marketing Banner Design" />
+        <div class="masonry-overlay">
+          <h4 class="masonry-title">Marketing Campaign Visual</h4>
+          <span class="masonry-tag">Marketing Designs</span>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-category="catalogue">
+        <img src="assets/catalogue_neokwick.png" alt="Biotech Catalogue Design" />
+        <div class="masonry-overlay">
+          <h4 class="masonry-title">NEOKWICKLIFE Biotech Catalogue</h4>
+          <span class="masonry-tag">Catalogue Designs</span>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-category="corporate">
+        <img src="assets/project_vedant.png" alt="Corporate Design" />
+        <div class="masonry-overlay">
+          <h4 class="masonry-title">Corporate Visual Identity</h4>
+          <span class="masonry-tag">Corporate Designs</span>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-category="social">
+        <img src="assets/graphic_marketing.png" alt="Promotional Graphic" />
+        <div class="masonry-overlay">
+          <h4 class="masonry-title">Promotional Graphic Post</h4>
+          <span class="masonry-tag">Promotional Graphics</span>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-category="catalogue">
+        <img src="assets/catalogue_omnilab.png" alt="Lab Equipment Catalogue" />
+        <div class="masonry-overlay">
+          <h4 class="masonry-title">Omni Lab Equipment Catalogue</h4>
+          <span class="masonry-tag">Catalogue Designs</span>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-category="branding">
+        <img src="assets/graphic_social.png" alt="Brand Campaign" />
+        <div class="masonry-overlay">
+          <h4 class="masonry-title">Brand Campaign Graphics</h4>
+          <span class="masonry-tag">Branding Concepts</span>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-category="corporate">
+        <img src="assets/catalogue_omnisci.png" alt="Scientific Corporate Design" />
+        <div class="masonry-overlay">
+          <h4 class="masonry-title">Scientific Microscopy Catalogue</h4>
+          <span class="masonry-tag">Corporate Designs</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 7: CATALOGUE DESIGNS
+     ============================================ -->
+<section id="catalogue" aria-label="Catalogue Design Projects">
+  <div class="container">
+    <span class="section-tag">Print &amp; Digital</span>
+    <h2 class="section-title">Catalogue Design <span>Projects</span></h2>
+    <p class="section-desc">Professional product catalogues designed for brand impact — combining clean layout structure with strong visual storytelling.</p>
+
+    <div class="catalogue-grid">
+
+      <div class="catalogue-card">
+        <div class="catalogue-card-img-wrap">
+          <img src="assets/catalogue_neokwick.png" alt="NEOKWICKLIFE BIOTECH Catalogue" />
+        </div>
+        <div class="catalogue-card-body">
+          <h3 class="catalogue-name">NEOKWICKLIFE BIOTECH</h3>
+          <p class="catalogue-desc">Designed a professional product catalogue using Canva, ensuring brand consistency, strong visual hierarchy, and digital readiness.</p>
+          <div class="catalogue-meta">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            Product Catalogue · Print-Ready
+          </div>
+          <a href="https://drive.google.com/file/d/13jef39_y-69n0HDK6K6j3SkDgljll1_X/view" target="_blank" rel="noopener noreferrer" class="catalogue-preview-btn" id="catalogue-neokwick-preview">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            View Catalogue
+          </a>
+        </div>
+      </div>
+
+      <div class="catalogue-card">
+        <div class="catalogue-card-img-wrap">
+          <img src="assets/catalogue_omnilab.png" alt="OMNI LABORATORY EQUIPMENT Catalogue" />
+        </div>
+        <div class="catalogue-card-body">
+          <h3 class="catalogue-name">OMNI LABORATORY EQUIPMENT</h3>
+          <p class="catalogue-desc">Created a professional product catalogue using Canva, emphasizing cohesive design and visual storytelling for a lab equipment supplier.</p>
+          <div class="catalogue-meta">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            Corporate Catalogue · B2B
+          </div>
+          <a href="https://drive.google.com/file/d/1EFybGUXBmPtbbkAmF3V3ulK8ZHIHVtoo/view" target="_blank" rel="noopener noreferrer" class="catalogue-preview-btn" id="catalogue-omnilab-preview">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            View Catalogue
+          </a>
+        </div>
+      </div>
+
+      <div class="catalogue-card">
+        <div class="catalogue-card-img-wrap">
+          <img src="assets/catalogue_omnisci.png" alt="OMNI SCIENTIFIC MICROSCOPY Catalogue" />
+        </div>
+        <div class="catalogue-card-body">
+          <h3 class="catalogue-name">OMNI SCIENTIFIC MICROSCOPY</h3>
+          <p class="catalogue-desc">Designed a product catalogue for OMNI Scientific Microscopy Solutions using Canva, ensuring clear layout, brand consistency and print/digital readiness.</p>
+          <div class="catalogue-meta">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            Scientific Catalogue · Digital
+          </div>
+          <a href="https://drive.google.com/file/d/1h0XtDeDgJgJ1gMCRkTe1vtckKbmF2wPZ/view" target="_blank" rel="noopener noreferrer" class="catalogue-preview-btn" id="catalogue-omnisci-preview">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            View Catalogue
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 8: CERTIFICATIONS
+     ============================================ -->
+<section id="certifications" aria-label="Certifications">
+  <div class="container">
+    <span class="section-tag">Credentials</span>
+    <h2 class="section-title">Certifications &amp; <span>Learning</span></h2>
+    <p class="section-desc">Continuous skill development through industry-recognized certifications and professional training programs.</p>
+
+    <div class="certs-grid">
+
+      <div class="cert-card">
+        <div class="cert-icon">🐍</div>
+        <div class="cert-info">
+          <h3 class="cert-name">Python</h3>
+          <p class="cert-issuer">GUVI</p>
+          <p class="cert-year">Apr 2021 · Completed</p>
+          <p class="cert-desc">Completed a certification in Python programming covering core concepts like data types, control structures, functions, and file handling. Gained hands-on experience through coding exercises and real-world problem solving.</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">🤖</div>
+        <div class="cert-info">
+          <h3 class="cert-name">ChatGPT</h3>
+          <p class="cert-issuer">GUVI</p>
+          <p class="cert-year">July 2023 · Completed</p>
+          <p class="cert-desc">Completed GUVI's ChatGPT with Python certification, gaining practical skills in building AI-powered applications. Covered prompt engineering, API integration, and real-time chatbot development.</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">📱</div>
+        <div class="cert-info">
+          <h3 class="cert-name">Android Development</h3>
+          <p class="cert-issuer">Awnik Infotech</p>
+          <p class="cert-year">June 2024 · Completed</p>
+          <p class="cert-desc">Completed Android Development certification from Awnik Infotech, with emphasis on core app functionality using Java and Android SDK. Gained hands-on experience in activity lifecycle, intents, and backend integration.</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">💬</div>
+        <div class="cert-info">
+          <h3 class="cert-name">Communication Skills</h3>
+          <p class="cert-issuer">IBM</p>
+          <p class="cert-year">June 2024 · Completed</p>
+          <p class="cert-desc">Completed IBM's Communication Skills certification focusing on effective verbal, non-verbal, and written communication in professional settings. Developed skills in active listening, presentation, and interpersonal communication.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 9: DESIGN PHILOSOPHY
+     ============================================ -->
+<section id="philosophy" aria-label="Design Philosophy">
+  <div class="philosophy-bg"></div>
+  <div class="container">
+    <span class="section-tag" style="margin-bottom:24px; display:block; text-align:center; justify-content:center;">Design Philosophy</span>
+    <span class="philosophy-quote-mark" aria-hidden="true">"</span>
+    <blockquote class="philosophy-quote">
+      Great design is not just about aesthetics. It's about creating
+      <em>meaningful experiences</em> that communicate ideas, build trust and inspire action.
+    </blockquote>
+    <p class="philosophy-author">— Amisha Maurya</p>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 10: CONTACT
+     ============================================ -->
+<section id="contact" aria-label="Contact">
+  <div class="container">
+    <span class="section-tag">Get In Touch</span>
+    <h2 class="section-title">Let's Build Something <span>Amazing</span> Together</h2>
+    <p class="section-desc">Have a project in mind or want to collaborate? I'd love to hear from you. Let's create something remarkable.</p>
+
+    <div class="contact-grid">
+
+      <!-- Contact Form -->
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="form-group">
+          <input type="text" class="form-input" id="contact-name" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-input" id="contact-email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-input" id="contact-subject" name="subject" placeholder="Subject" />
+        </div>
+        <div class="form-group">
+          <textarea class="form-textarea" id="contact-message" name="message" placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="contact-submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          Send Message
+        </button>
+      </form>
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3 class="contact-info-title">Let's Connect</h3>
+        <div class="contact-info-items">
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div>
+              <p class="contact-info-label">Email</p>
+              <a href="mailto:mauryaamisha731@gmail.com" class="contact-info-value">mauryaamisha731@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div>
+              <p class="contact-info-label">Phone</p>
+              <a href="tel:+916394187670" class="contact-info-value">+91 6394187670</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div>
+              <p class="contact-info-label">Location</p>
+              <p class="contact-info-value">India · Open to Remote</p>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="social-links-title">Find Me Online</p>
+        <div class="social-links">
+
+          <a href="https://www.linkedin.com/in/amishamaurya715" target="_blank" rel="noopener noreferrer" class="social-link" id="social-linkedin" aria-label="LinkedIn - amishamaurya715">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+
+          <a href="https://github.com/amisha715" target="_blank" rel="noopener noreferrer" class="social-link" id="social-github" aria-label="GitHub - amisha715">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" id="social-instagram" aria-label="Instagram Profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">Amisha <span>Maurya</span></div>
+      <div class="footer-tagline">Graphic Designer | Web Designer | WordPress Developer</div>
+    </div>
+    <div class="footer-copy">
+      Copyright &copy; <strong>2026</strong> Amisha Maurya. All rights reserved.
+    </div>
+    <div class="footer-love">
+      Built with <span style="color:#FF6B35;">♥</span> creativity and passion.
+    </div>
+  </div>
+</footer>
+
+<!-- Script -->
+<script src="script.js"></script>
+<script>
+  // Initialize Lucide icons
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+</script>
+</body>
+</html>
